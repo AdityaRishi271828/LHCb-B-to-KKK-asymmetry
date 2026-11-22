@@ -19,3 +19,15 @@ MASS_BIN = 10
 PROBK_MIN = 0.5
 PROBPI_MAX = 0.2
 
+PID_LOOSE = {"probk_min": None, "probpi_max": None}
+PID_TIGHT = {"probk_min": None, "probpi_max": None}
+
+
+
+
+SIGNAL_WINDOW = (5264, 5304)
+SIDEBANDS = [(5100, 5150), (5400, 5450)]
+WINDOW_VARIATIONS = [(5267, 5301), (5251, 5317)]
+
+
+SIGNIFICANCE_LEVEL = 0.0027 

@@ -1,0 +1,5 @@
+Signal window (5264, 5304) MeV/c^2: 8413 candidates
+Sidebands [(5100, 5150), (5400, 5450)] MeV/c^2: 890 candidates
+Estimated background in window: 356
+Estimated signal: 8057 +/- 92
+Background fraction in window: 0.042
