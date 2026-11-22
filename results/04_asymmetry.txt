@@ -1,0 +1,5 @@
+N(B+) = 4226 +/- 67
+N(B-) = 3831 +/- 64
+Raw asymmetry A = -0.0491 +/- 0.0115
+Significance z = -4.28, two-sided p = 1.87e-05
+H0 rejected at the 0.0027 level: True
