@@ -1,0 +1,7 @@
+Cut flow, both magnet polarities
+
+All candidates                      8556118 (100.00%)
+Total charge is +1 or -1            8556118 (100.00%)
+No track identified as a muon       6311517 ( 73.77%)
+All three ProbK > 0.5                 26959 (  0.32%)
+All three ProbPi < 0.2                15958 (  0.19%)
