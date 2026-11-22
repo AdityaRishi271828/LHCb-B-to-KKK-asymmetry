@@ -1,0 +1,17 @@
+Nominal: A = -0.0491 +/- 0.0115
+
+1. Magnet polarity
+ Down: A = -0.0496 +/- 0.0149
+ Up: A = -0.0483 +/- 0.0179
+ Difference: z = 0.06, p = 0.953
+
+2. Sideband candidates
+ N+ = 452, N- = 438, A = -0.0157 +/- 0.0335
+
+3. Selection variations
+ Loose {'probk_min': 0.4, 'probpi_max': 0.3}: A = -0.0470 +/- 0.0097
+ Tight {'probk_min': 0.6, 'probpi_max': 0.1}: A = -0.0576 +/- 0.0222
+
+4. Window variations
+ Window (5267, 5301): A = -0.0508 +/- 0.0121
+ Window (5251, 5317): A = -0.0505 +/- 0.0105
