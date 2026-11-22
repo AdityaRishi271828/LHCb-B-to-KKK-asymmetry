@@ -19,9 +19,8 @@ MASS_BIN = 10
 PROBK_MIN = 0.5
 PROBPI_MAX = 0.2
 
-PID_LOOSE = {"probk_min": None, "probpi_max": None}
-PID_TIGHT = {"probk_min": None, "probpi_max": None}
-
+PID_LOOSE = {"probk_min": 0.4, "probpi_max": 0.3}
+PID_TIGHT = {"probk_min": 0.6, "probpi_max": 0.1}
 
 
 

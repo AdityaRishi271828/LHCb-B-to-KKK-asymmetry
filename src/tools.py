@@ -110,3 +110,42 @@ def select(probk_min, probpi_max):
 def load_selected():
     s = np.load(config.SELECTED_FILE)
     return s["mass"], s["charge"], s["polarity"]
+
+
+# statistics
+def count_in(masses, region):
+    lo, hi = region
+    return int(np.count_nonzero((masses >= lo) & (masses < hi)))
+
+def width(regions):
+    if isinstance(regions[0], (int, float)):
+        regions = [regions]
+    return sum(hi - lo for lo, hi in regions)
+
+def sideband_subtract(masses, window, sidebands):
+    n_win = count_in(masses, window)
+    n_side = sum(count_in(masses, sb) for sb in sidebands)
+    r = width(window) / width(sidebands)
+    n_sig = n_win - r * n_side
+    err = np.sqrt(n_win + r**2 * n_side)
+    return n_sig, err
+
+def asymmetry(n_plus, n_minus, s_plus, s_minus):
+    n = n_plus + n_minus
+    a = (n_minus - n_plus) / n
+    sigma = 2 / n**2 * np.sqrt((n_plus * s_minus)**2 + (n_minus * s_plus)**2)
+    return a, sigma
+
+def two_sided_p(z):
+    return 2 * stats.norm.sf(abs(z))
+
+def measure(masses, charges, window, sidebands):
+    n_p, s_p = sideband_subtract(masses[charges == +1], window, sidebands)
+    n_m, s_m = sideband_subtract(masses[charges == -1], window, sidebands)
+    a, sigma = asymmetry(n_p, n_m, s_p, s_m)
+    z = a / sigma
+    return {"N+": n_p, "err N+": s_p, "N-": n_m, "err N-": s_m, "A": a, "sigma": sigma, "z": z, "p": two_sided_p(z)}
+
+def compare(a1, s1, a2, s2):
+    z = (a1 - a2) / np.sqrt(s1**2 + s2**2)
+    return z, two_sided_p(z)
